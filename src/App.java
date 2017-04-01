@@ -7,7 +7,7 @@ public class App {
 			control.executeMovements();
 			control.showOutput();
 		} else {
-			System.out.println("Formato de entrada de dados incorreto!");
+			System.out.println("Entrada Invalida!");
 		}
 	}
 
