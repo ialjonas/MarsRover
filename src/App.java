@@ -10,5 +10,4 @@ public class App {
 			System.out.println("Entrada Invalida!");
 		}
 	}
-
 }
