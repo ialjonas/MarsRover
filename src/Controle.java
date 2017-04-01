@@ -34,7 +34,7 @@ public class Controle {
 		String command = "";
 
 		System.out.println("*** MARS ROVER ***");
-		System.out.println("Entrada de dados (digite \".\" para encerrar):");
+		System.out.println("Entre com as coordenadas (digite \".\" para encerrar):");
 
 		while (!command.equals(".")) {
 			command = scanner.nextLine();

@@ -7,7 +7,7 @@ public class App {
 			control.executeMovements();
 			control.showOutput();
 		} else {
-			System.out.println("Entrada Invalida!");
+			System.out.println("Entrada Invalida! Revise as informacoes");
 		}
 	}
 }
