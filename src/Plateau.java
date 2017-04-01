@@ -1,5 +1,4 @@
 
-
 public class Plateau {
 
 	private int maxX;

@@ -13,7 +13,8 @@ public class ControleTest {
 	@Before
 	public void setUp() throws Exception {
 		this.control = new Controle();
-		control.setInput("5 5" + System.lineSeparator() + "1 2 N" + System.lineSeparator() + "LMLMLMLMM" + System.lineSeparator() + "3 3 E" + System.lineSeparator() + "MMRMMRMRRM");
+		control.setInput("5 5" + System.lineSeparator() + "1 2 N" + System.lineSeparator() + "LMLMLMLMM"
+				+ System.lineSeparator() + "3 3 E" + System.lineSeparator() + "MMRMMRMRRM");
 	}
 
 	@Test

@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-
 public class Controle {
 
 	private Scanner scanner;
@@ -37,7 +36,7 @@ public class Controle {
 		System.out.println("*** MARS ROVER ***");
 		System.out.println("Entrada de dados (digite \".\" para encerrar):");
 
-		while(!command.equals(".")) {
+		while (!command.equals(".")) {
 			command = scanner.nextLine();
 			if (!command.equals(".")) {
 				this.input.add(command);
@@ -62,30 +61,33 @@ public class Controle {
 				plateau_dimensions = this.input.remove(0).split(" ");
 				int plateau_max_x = Integer.parseInt(plateau_dimensions[0]);
 				int plateau_max_y = Integer.parseInt(plateau_dimensions[1]);
-	
+
 				if (plateau_max_x > 0 && plateau_max_y > 0) {
 					this.plateau = new Plateau(plateau_max_x, plateau_max_y);
 				} else {
 					return false;
 				}
-	
+
 				// Rovers
 				String[] rover_deployment = new String[3];
 				String command;
 				int rover_deployment_x;
 				int rover_deployment_y;
 				String rover_deployment_orientation;
-	
+
 				for (int n = 0; n < this.input.size(); n += 2) {
 					command = this.input.get(n);
-	
+
 					rover_deployment = command.split(" ");
 					rover_deployment_x = Integer.parseInt(rover_deployment[0]);
 					rover_deployment_y = Integer.parseInt(rover_deployment[1]);
 					rover_deployment_orientation = rover_deployment[2];
 
-					if (rover_deployment_x >= 0 && rover_deployment_x <= plateau_max_x && rover_deployment_y >= 0 && rover_deployment_y <= plateau_max_y && this.validOrientations.contains(rover_deployment_orientation)) {
-						this.rovers.add(new Rover(rover_deployment_x, rover_deployment_y, rover_deployment_orientation, this.plateau));
+					if (rover_deployment_x >= 0 && rover_deployment_x <= plateau_max_x && rover_deployment_y >= 0
+							&& rover_deployment_y <= plateau_max_y
+							&& this.validOrientations.contains(rover_deployment_orientation)) {
+						this.rovers.add(new Rover(rover_deployment_x, rover_deployment_y, rover_deployment_orientation,
+								this.plateau));
 					} else {
 						return false;
 					}
@@ -121,15 +123,15 @@ public class Controle {
 			movement = this.movements.get(n);
 			for (char c : movement.toCharArray()) {
 				switch (c) {
-					case 'L':
-						rover.rotateLeft();
-						break;
-					case 'R':
-						rover.rotateRight();
-						break;
-					case 'M':
-						rover.moveForward();
-						break;
+				case 'L':
+					rover.rotateLeft();
+					break;
+				case 'R':
+					rover.rotateRight();
+					break;
+				case 'M':
+					rover.moveForward();
+					break;
 				}
 			}
 		}
